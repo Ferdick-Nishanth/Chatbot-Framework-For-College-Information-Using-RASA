@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <section class="hero is-info">
+    <div class="hero-body">
+      <h1 class="title">
+        Create Student
+      </h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+        <div class="content">
+            <form action="#" method="POST"></form>
+
+            <div class="field">
+                <label class="label">Role</label>
+                <div class="control">
+                    <div class="select">
+                        <select name="role">
+                            {% for role in roles %}
+                            <option value="{{role.id}}" SELECTED>{{ role.name }}</option>"
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Department</label>
+                <div class="control">
+                    <div class="select">
+                        <select name="dept">
+                            {% for dept in depts %}
+                            <option value="{{dept.id}}" SELECTED>{{ dept.dept_name }}</option>"
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Register Number</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="e.g Alex Smith">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">First Name</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="e.g Alex Smith">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Last Name</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="e.g Alex Smith">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link">Submit</button>
+                </div>
+                <div class="control">
+                    <button type="submit" class="btn btn-primary">Create User</button>
+                </div>
+            </div>
+        </div>
+    </div>   
+</section>
+
+  </body>
+</html>

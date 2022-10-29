@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <section class="hero is-info">
+    <div class="hero-body">
+      <h1 class="title">
+        Student Marks
+      </h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+<span class="output"></span> 
+        <table class = "table">
+            <thead>
+               <tr>
+                  <th>Subject Name</th>
+                  <th>Mark</th>
+               </tr>
+            </thead>
+            <tbody> 
+                {% block content %}
+                  {% for subject in subjects %}
+                    {% for mark in marks %}
+            <tr>
+                <td>{{subject.subject_name}}</td>
+                <td>{{mark.mark}}</td>
+                    {% endfor %}
+                  {% endfor %}
+                {% endblock content %}
+               </tr>
+            </tbody>
+         </table>
+        
+        </div>
+        </section>
+        </body>
+</html>
+

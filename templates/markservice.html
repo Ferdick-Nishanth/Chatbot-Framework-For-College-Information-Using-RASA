@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <section class="hero is-info">
+    <div class="hero-body">
+      <h1 class="title">
+        Student Marks
+      </h1>
+    </div>
+  </section>
+
+<section class="section">
+    <div class="container">
+        
+        <div class="content">
+            <form action="http://127.0.0.1:5000/semtest" method="GET">
+            <div class="field">
+                <label class="label">Student Register Number</label>
+                <div class="control">
+                    <div class="select">
+                        <select id="student" name="student">
+                            {% for student in students %}
+                            <option value="{{student.id}}" SELECTED>{{ student.reg_no }}</option>"
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Semester</label>
+                <div class="control">
+                    <div class="select">
+                        <select name="semester">
+                            {% for semester in semesters %}
+                            <option value="{{semester.id}}" SELECTED>{{ semester.semester_name }}</option>"
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="button is-info">Display Marks</button>
+    </form>
+<!--
+        <span class="output"></span> 
+        <table class = "table">
+            <thead>
+               <tr>
+                  <th>S.No</th>
+                  <th>Subject Name</th>
+                  <th>Mark</th>
+               </tr>
+            </thead>
+            <tbody> 
+                {% block content %}   
+                    {% for subject in subjects %}
+                        {% for mark in marks %}
+            <tr>
+                <td>1</td>
+                <td>{{subject.subject_name}}</td>
+                <td>{{mark.mark}}</td>
+                        {% endfor %}
+                    {% endfor %}
+                {% endblock content %}
+               </tr>
+            </tbody>
+         </table>
+         -->
+    </div>   
+</section>
+<!--
+<script type="text/javascript"> 
+    function getOption() { 
+        selectElement =  
+                document.querySelector('#student'); 
+                  
+        output = selectElement.value; 
+
+        document.querySelector('.output').textContent 
+                = output; 
+    } 
+</script> 
+-->
+</body>
+</html>
