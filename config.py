@@ -1,0 +1,1 @@
+DATABASE_URI = 'postgres+psycopg2://postgres:#nishanth@0007@localhost:5432/chatbotnew'
